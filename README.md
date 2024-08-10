@@ -5,7 +5,36 @@ Welcome to my FastAPI Learning repository! This repository is dedicated to helpi
 ## Topics
 
 - Python Refresher
--
+
+## Important Commands
+
+- To run a FastAPI file using `uvicorn`, use the following command:
+
+```bash
+uvicorn <file_name>:<fastapi_app> --reload
+```
+
+`--reload` makes sure that after making the changes, the FastAPI app reloads automatically.
+
+- To run a FastAPI file using `fastapi`, use the following command:
+
+```bash
+fastapi run <file_name> # This will run the app in production mode.
+fastapi dev <file_name> # This will run the app in development mode.
+```
+
+> To see all the routes of an API, use `/docs` route.
+
+## Sqlite Database Commands
+
+- `sqlite3 <database_name.db>` to run the database in terminal.
+- `.schema` to see the database schemas.
+- Here, you can use SQL commands to insert, delete, update and see the data.
+- Different `.mode` can be used to see the database in different formats.
+  > .mode column <br />
+  > .mode markdown <br />
+  > .mode box <br />
+  > .mode table <br />
 
 ## Credits
 
