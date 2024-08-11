@@ -1,27 +1,8 @@
-from pydantic import BaseModel, Field
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from database import Base
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 
 
-class Todos(Base):
-    __tablename__ = "todos"
-
-    id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    description = Column(String)
-    priority = Column(Integer)
-    complete = Column(Boolean, default=False)
-    owner_id = Column(Integer, ForeignKey("users.id"))
-
-
-class TodoRequest(BaseModel):
-    title: str = Field(min_length=3)
-    description: str = Field(min_length=3, max_length=100)
-    priority: int = Field(gt=0, lt=6)
-    complete: bool
-
-
-class User(Base):
+class Users(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -34,15 +15,12 @@ class User(Base):
     role = Column(String)
 
 
-class CreateUserRequest(BaseModel):
-    username: str
-    email: str
-    first_name: str
-    last_name: str
-    password: str
-    role: str
+class Todos(Base):
+    __tablename__ = "todos"
 
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String)
+    description = Column(String)
+    priority = Column(Integer)
+    complete = Column(Boolean, default=False)
+    owner_id = Column(Integer, ForeignKey("users.id"))
