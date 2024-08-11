@@ -36,6 +36,18 @@ fastapi dev <file_name> # This will run the app in development mode.
   > .mode box <br />
   > .mode table <br />
 
+## Alembic setup
+
+- To setup alembic, use the command: `alembic init alembic`.
+- To revise the database using alembic, use the command: `alembic revision -m '<Your_Message>'`
+- To upgrade - write upgrade function to upgrade the database and run the command `alembic upgrade <revision_id>`. `revision_id` will be created in the previous step.
+- To downgrade - write downgrade function to downgrade the database and run the command `alembic downgrade -1`.
+
+## Pytest setup
+
+- If you have only one test file, then you can run that test file using `pytest` command only.
+- If you have multiple test files, then to run a test file, use the command: `pytest <file_name.py>`
+
 ## Credits
 
 This repository follows the Udemy Course [FastAPI - The Complete Course 2024 (Beginner + Advanced)](https://www.udemy.com/course/fastapi-the-complete-course/) by [Eric Roby](https://www.udemy.com/user/ericroby2/) and [Chad Darby](https://www.udemy.com/user/chaddarby2/).
