@@ -48,6 +48,10 @@ fastapi dev <file_name> # This will run the app in development mode.
 - If you have only one test file, then you can run that test file using `pytest` command only.
 - If you have multiple test files, then to run a test file, use the command: `pytest <file_name.py>`
 
+## Requirements
+
+- To list all the package requirements, you can use this command: `pip freeze > requirements.txt`. This command will create a new text file named `requirements.txt` and will list all the packages in that text file.
+
 ## Credits
 
 This repository follows the Udemy Course [FastAPI - The Complete Course 2024 (Beginner + Advanced)](https://www.udemy.com/course/fastapi-the-complete-course/) by [Eric Roby](https://www.udemy.com/user/ericroby2/) and [Chad Darby](https://www.udemy.com/user/chaddarby2/).
